@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Lusamine.SlimExpressionParser.Sample/Lusamine.SlimExpressionParser.Sample.csproj" />
+  <Project Path="Lusamine.SlimExpressionParser.Tests/Lusamine.SlimExpressionParser.Tests.csproj" />
+  <Project Path="Lusamine.SlimExpressionParser/Lusamine.SlimExpressionParser.csproj" />
+</Solution>

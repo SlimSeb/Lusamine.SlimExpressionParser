@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net10.0;netstandard2.0</TargetFrameworks>
+        <LangVersion>14</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Lusamine.SlimExpressionParser</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Slimane F</Authors>
+        <Description>A tiny, dependency-free evaluator for short expressions such as "cos(123) + sin(456)" or "count() >= 2 &amp;&amp; !muted". Every identifier and function comes from the caller; there are no built-ins.</Description>
+        <PackageTags>expression;evaluator;parser;formula</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>

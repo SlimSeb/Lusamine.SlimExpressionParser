@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <LangVersion>14</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <OutputType>Exe</OutputType>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <!--
+      Selects which library build the tests run against:
+        dotnet test                                          (net10.0, the default)
+        dotnet test -p:LibraryTargetFramework=netstandard2.0
+      LibraryBuildTests checks that the selected assembly is the one actually loaded.
+    -->
+    <PropertyGroup>
+        <LibraryTargetFramework Condition="'$(LibraryTargetFramework)' == ''">net10.0</LibraryTargetFramework>
+        <DefineConstants Condition="'$(LibraryTargetFramework)' == 'netstandard2.0'">$(DefineConstants);LIBRARY_NETSTANDARD2_0</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="xunit.v3" Version="4.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Lusamine.SlimExpressionParser\Lusamine.SlimExpressionParser.csproj"
+                          SetTargetFramework="TargetFramework=$(LibraryTargetFramework)" />
+    </ItemGroup>
+
+</Project>
